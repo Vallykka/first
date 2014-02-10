@@ -1,0 +1,13 @@
+include layout
+#main
+    - each topic in topics 
+     div.topic     
+      div.topic
+        - var id= topic._id.toHexString()
+        a(href="/forum/" + id)!= topic.topic        
+      div.question= topic.question
+
+   
+               
+
+    

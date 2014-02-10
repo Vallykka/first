@@ -1,0 +1,20 @@
+include layout
+h1 = topic
+#main
+ div.advertisements
+   div.title= topic.topic
+   - each post in topic.advertisement
+     div.post
+          div.person= post.author
+          div.adv= post.post
+   div
+       form(method = "post", action = "/forum/addPost")
+           input(type = "hidden", name="_id", value= topic._id.toHexString())
+           div
+              span Отправитель :
+              input(type = "text", name = "author", id = "addPostAuthor")
+           div
+              span Объявление :
+              textarea(name = "post", rows = 10, id = "addPostPost")
+           div#editTopicSubmit
+              input(type = "submit", value = "Отправить")
